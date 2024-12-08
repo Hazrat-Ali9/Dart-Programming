@@ -21,5 +21,5 @@ void main(List<String> arguments) {
 	print(score);
 	print(exponents);
 
-	// data types
+	// data types dart
 }
