@@ -163,5 +163,65 @@ void main() {
 
 In this extension, we've introduced a new class `Cat` that also extends `Animal`. The `Cat` class has its own properties and methods, and it overrides the `makeSound` method inherited from `Animal`.
 
+## Encapsulation
+
+Encapsulation is the concept of bundling data and methods that operate on that data within a single unit, i.e., a class. Dart supports encapsulation through the use of access modifiers (`public`, `private`, and `protected`). Dart uses an underscore `_` as a convention for marking private members. Let's modify our example to incorporate encapsulation:
+
+```dart
+class Animal {
+  String _name; // Private property
+ 
+
+ int _age; // Private property
+
+  Animal(this._name, this._age);
+
+  Animal.namedConstructor(this._name) : _age = 0;
+
+  void makeSound() {
+    print('Animal makes a sound');
+  }
+
+  // Getter for private property _name
+  String get name => _name;
+
+  // Setter for private property _name
+  set name(String value) => _name = value;
+
+  // Getter for private property _age
+  int get age => _age;
+
+  // Setter for private property _age
+  set age(int value) => _age = value;
+}
+
+class Dog extends Animal {
+  String _breed; // Private property
+
+  Dog(String name, int age, this._breed) : super(name, age);
+
+  Dog.namedConstructor(String name, String breed)
+      : _breed = breed,
+        super.namedConstructor(name);
+
+  @override
+  void makeSound() {
+    print('Dog barks');
+  }
+
+  void showDetails() {
+    print('Name: $name, Age: $age, Breed: $_breed');
+  }
+}
+
+void main() {
+  var myDog = Dog('Buddy', 3, 'Golden Retriever');
+  
+  // Accessing private properties through getters
+  print('Name: ${myDog.name}, Age: ${myDog.age}, Breed: ${myDog.showDetails()}');
+}
+```
+
+In this example, properties `_name`, `_age`, and `_breed` are marked as private using the underscore `_`. Getters and setters are then used to provide controlled access to these private properties.
 
 
