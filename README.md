@@ -224,4 +224,54 @@ void main() {
 
 In this example, properties `_name`, `_age`, and `_breed` are marked as private using the underscore `_`. Getters and setters are then used to provide controlled access to these private properties.
 
+## Abstraction
+
+Abstraction involves hiding complex implementation details and showing only the necessary features of an object. Dart achieves abstraction through abstract classes and methods. Let's create an abstract class and extend it:
+
+```dart
+abstract class Shape {
+  // Abstract method
+  void draw();
+
+  // Regular method
+  void getInfo() {
+    print('This is a shape.');
+  }
+}
+
+class Circle extends Shape {
+  double radius;
+
+  Circle(this.radius);
+
+  @override
+  void draw() {
+    print('Drawing a circle with radius $radius');
+  }
+}
+
+class Square extends Shape {
+  double side;
+
+  Square(this.side);
+
+  @override
+  void draw() {
+    print('Drawing a square with side $side');
+  }
+}
+
+void main() {
+  var myCircle = Circle(5.0);
+  var mySquare = Square(4.0);
+
+  myCircle.draw();
+  myCircle.getInfo();
+
+  mySquare.draw();
+  mySquare.getInfo();
+}
+```
+
+Here, `Shape` is an abstract class with an abstract method `draw()`. The `Circle` and `Square` classes extend `Shape` and provide their own implementations of the `draw()` method.
 
