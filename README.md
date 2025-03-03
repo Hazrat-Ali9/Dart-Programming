@@ -275,3 +275,22 @@ void main() {
 
 Here, `Shape` is an abstract class with an abstract method `draw()`. The `Circle` and `Square` classes extend `Shape` and provide their own implementations of the `draw()` method.
 
+## Polymorphism
+
+Polymorphism allows objects of different types to be treated as objects of a common type. Dart supports polymorphism through method overriding. Let's demonstrate polymorphism using our existing classes:
+
+```dart
+void main() {
+  Shape myCircle = Circle(5.0);
+  Shape mySquare = Square(4.0);
+
+  drawShape(myCircle);
+  drawShape(mySquare);
+}
+
+void drawShape(Shape shape) {
+  shape.draw();
+}
+```
+
+In this example, `myCircle` and `mySquare` are both treated as `Shape` objects when passed to the `drawShape` function. The `draw()` method of the appropriate class (either `Circle` or `Square`) is called based on the actual type of the object.
