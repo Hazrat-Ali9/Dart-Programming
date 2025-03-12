@@ -343,4 +343,42 @@ void main() {
 In this example, the `parseInt` method from the `StringExtension` extension is used to parse a string into an integer, and the `capitalize` method is used to capitalize the first letter of a string.
 
 
+## Limitations
+
+- Extensions can only be declared on non-nullable types.
+- They cannot access private members of the extended type.
+- Extensions are not inherited, meaning if a subclass extends a class, it won't automatically inherit the extensions of the superclass.
+
+## Advanced Usage
+
+Extensions can be used to add functionality to third-party or system libraries without modifying their source code. For example, you could create an extension to add extra methods to the `List` class:
+
+```dart
+extension ListExtension<E> on List<E> {
+  E safeGet(int index) {
+    return (index >= 0 && index < this.length) ? this[index] : null;
+  }
+
+  void printAll() {
+    this.forEach(print);
+  }
+}
+```
+
+Now, you can use these methods on any list:
+
+```dart
+void main() {
+  List<int> numbers = [1, 2, 3, 4, 5];
+
+  int element = numbers.safeGet(2);
+  print('Element at index 2: $element');
+
+  numbers.printAll();
+}
+```
+
+This is a powerful feature for enhancing existing types and promoting code reuse.
+
+
 
