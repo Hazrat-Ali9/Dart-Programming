@@ -388,3 +388,17 @@ Extensions in Dart provide a clean and efficient way to add new functionality to
 
 Mixins in Dart are a way to reuse a class's code in multiple class hierarchies. They allow you to extend the functionality of a class without using traditional inheritance. Mixins are a powerful feature in Dart that promotes code reuse and separation of concerns. Here's a step-by-step guide to understanding and using mixins in Dart:
 
+
+### 1. **Define a Mixin:**
+
+Create a mixin by using the `mixin` keyword followed by a name. A mixin can include methods, properties, and even other mixins.
+
+```dart
+mixin LoggingMixin {
+  void log(String message) {
+    print('Log: $message');
+  }
+}
+```
+
+In this example, `LoggingMixin` defines a simple `log` method.
