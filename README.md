@@ -402,3 +402,19 @@ mixin LoggingMixin {
 ```
 
 In this example, `LoggingMixin` defines a simple `log` method.
+
+### 2. **Use Mixin in a Class:**
+
+To use a mixin in a class, use the `with` keyword followed by the mixin's name.
+
+```dart
+class Calculator with LoggingMixin {
+  int add(int a, int b) {
+    log('Adding $a and $b');
+    return a + b;
+  }
+}
+```
+
+Now, the `Calculator` class can use the `log` method from the `LoggingMixin`.
+
