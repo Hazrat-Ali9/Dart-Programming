@@ -418,3 +418,18 @@ class Calculator with LoggingMixin {
 
 Now, the `Calculator` class can use the `log` method from the `LoggingMixin`.
 
+
+### 3. **Instantiate and Use the Class:**
+
+Create an instance of the class and use its methods as usual.
+
+```dart
+void main() {
+  var calculator = Calculator();
+  var result = calculator.add(3, 7);
+  print('Result: $result');
+}
+```
+
+The `Calculator` class now benefits from the `log` method provided by the `LoggingMixin`.
+
