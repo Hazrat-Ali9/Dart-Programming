@@ -433,3 +433,20 @@ void main() {
 
 The `Calculator` class now benefits from the `log` method provided by the `LoggingMixin`.
 
+### 4. **Multiple Mixins:**
+
+You can use multiple mixins in a single class by separating them with commas.
+
+```dart
+mixin MathOperations {
+  int multiply(int a, int b) => a * b;
+}
+
+class AdvancedCalculator with LoggingMixin, MathOperations {
+  //...
+}
+```
+
+Now, `AdvancedCalculator` has access to both the `log` method from `LoggingMixin` and the `multiply` method from `MathOperations`.
+
+
