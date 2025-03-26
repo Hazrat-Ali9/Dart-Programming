@@ -450,3 +450,8 @@ class AdvancedCalculator with LoggingMixin, MathOperations {
 Now, `AdvancedCalculator` has access to both the `log` method from `LoggingMixin` and the `multiply` method from `MathOperations`.
 
 
+### 5. **Order of Mixins:**
+
+The order in which mixins are applied matters. The behavior of the class may vary based on the order of mixins. If two mixins provide the same method or property, the one declared first takes precedence.
+
+
