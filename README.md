@@ -454,4 +454,16 @@ Now, `AdvancedCalculator` has access to both the `log` method from `LoggingMixin
 
 The order in which mixins are applied matters. The behavior of the class may vary based on the order of mixins. If two mixins provide the same method or property, the one declared first takes precedence.
 
+### 6. **Understanding `on` Clause (Optional):**
+
+You can use the `on` clause to restrict the types that can use the mixin. This ensures that the mixin is applied only to specific types.
+
+```dart
+mixin LoggingMixin on Calculator {
+  
+}
+```
+
+In this example, `LoggingMixin` can only be used with classes that extend or implement `Calculator`.
+
 
