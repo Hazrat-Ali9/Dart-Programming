@@ -472,5 +472,42 @@ In this example, `LoggingMixin` can only be used with classes that extend or imp
 - They allow you to avoid the diamond problem (ambiguity that arises when a class inherits from two classes that have a common ancestor).
 - Be mindful of the order of mixins and potential conflicts.
 
+### Example Code:
+
+Here's a complete example incorporating all the concepts:
+
+```dart
+mixin LoggingMixin {
+  void log(String message) {
+    print('Log: $message');
+  }
+}
+
+mixin MathOperations {
+  int multiply(int a, int b) => a * b;
+}
+
+class Calculator with LoggingMixin, MathOperations {
+  int add(int a, int b) {
+    log('Adding $a and $b');
+    return a + b;
+  }
+}
+
+void main() {
+  var advancedCalculator = Calculator();
+  var result = advancedCalculator.add(3, 7);
+  print('Result: $result');
+
+  var multiplicationResult = advancedCalculator.multiply(4, 5);
+  print('Multiplication Result: $multiplicationResult');
+}
+```
+
+This example demonstrates a `Calculator` class using both `LoggingMixin` and `MathOperations` mixins.
+
+By understanding and using mixins effectively, you can enhance the modularity and flexibility of your Dart code.
+
+
 
 
