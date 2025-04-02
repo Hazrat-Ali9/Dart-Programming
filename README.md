@@ -508,6 +508,46 @@ This example demonstrates a `Calculator` class using both `LoggingMixin` and `Ma
 
 By understanding and using mixins effectively, you can enhance the modularity and flexibility of your Dart code.
 
+# Enums
+
+Enums in Dart allow you to define a set of named constant values. They are often used to represent a fixed set of values or options. Here's an example of how you can use enums in Dart:
+
+```dart
+// Define an enum named 'Status'
+enum Status {
+  idle,
+  running,
+  paused,
+  stopped,
+}
+
+void main() {
+  // Using enum values
+  Status currentStatus = Status.running;
+
+  // Switch statement with enum
+  switch (currentStatus) {
+    case Status.idle:
+      print("The system is idle.");
+      break;
+    case Status.running:
+      print("The system is running.");
+      break;
+    case Status.paused:
+      print("The system is paused.");
+      break;
+    case Status.stopped:
+      print("The system is stopped.");
+      break;
+    default:
+      print("Unknown status");
+  }
+}
+```
+
+In this example, we define an enum called `Status` with four possible values: `idle`, `running`, `paused`, and `stopped`. We then declare a variable `currentStatus` and assign it the value `Status.running`. Finally, we use a switch statement to check the current status and print a corresponding message.
+
+Enums in Dart are powerful because they provide a way to represent a fixed set of values in a clear and concise manner, making the code more readable and maintainable.
 
 
 
